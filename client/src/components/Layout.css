@@ -1,0 +1,131 @@
+.layout-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-body);
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-white);
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+}
+
+.nav-item.active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-light);
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.theme-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem;
+    border: 1px solid var(--border-light);
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    color: var(--text-main);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--bg-body);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem;
+    border: 1px solid var(--border-light);
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border-color: #fecaca;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2.5rem;
+    overflow-y: auto;
+    height: 100vh;
+}
