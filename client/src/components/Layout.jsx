@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { LayoutDashboard, Package, ArrowRightLeft, LogOut, User, Sun, Moon } from 'lucide-react';
-import './Layout.css'; // We'll create this CSS next
+import './Layout.css'; // Vamos criar este CSS próximo
 
 const Layout = ({ children }) => {
     const { user, logout } = useAuth();

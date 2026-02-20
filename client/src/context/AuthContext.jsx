@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Check if user is logged in
+        // Verificar se o usuário está conectado
         const storedUser = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         if (storedUser && token) {
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
             setUser(user);
             return { success: true };
         } catch (error) {
-            console.error('Login failed', error);
+            console.error('Login falhou', error);
             const message = error.response?.data?.message || 'Falha no login';
             return { success: false, message };
         }

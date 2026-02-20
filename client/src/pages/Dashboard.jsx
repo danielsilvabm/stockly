@@ -6,10 +6,10 @@ const Dashboard = () => {
     const [stats, setStats] = useState({ products: 0, movements: 0 });
 
     useEffect(() => {
-        // Fetch simple stats
+        // Buscar estatísticas simples
         const fetchStats = async () => {
-            // In a real app we might have a specific endpoint for dashboard stats
-            // Here we just fetch list lengths for demo
+            // Em uma aplicação real, poderíamos ter um endpoint específico para estatísticas do painel
+            // Aqui apenas buscamos comprimentos de lista para demonstração
             try {
                 const prodRes = await api.get('/products');
                 const movRes = await api.get('/stock/movements');
