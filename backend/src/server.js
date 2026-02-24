@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
+
 const produtosRoutes = require('./routes/produtos.routes');
 const movimentacoesRoutes = require('./routes/movimentacoes.routes');
 const errorMiddleware = require('./middlewares/error.middleware');
@@ -13,13 +14,13 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Servidor do Almoxarifado rodando 🚀');
+  res.send('Servidor do Almoxarifado rodando ');
 });
 
 app.use('/ferramentas', produtosRoutes);
 app.use('/movimentacoes', movimentacoesRoutes);
 
-// ⚠ SEMPRE por último
+//  SEMPRE por último
 app.use(errorMiddleware);
 
 const PORT = process.env.PORT || 3000;

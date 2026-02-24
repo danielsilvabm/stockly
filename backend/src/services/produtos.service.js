@@ -6,7 +6,18 @@ exports.createFerramenta = async (data) => {
     throw new Error('Nome e código são obrigatórios');
   }
 
-  return await ProdutosModel.criar(data);
+  const payload = {
+    nome: data.nome,
+    codigo: data.codigo,
+    descricao: data.descricao || '',
+    categoria: data.categoria || '',
+    quantidade:
+      typeof data.quantidade === 'number'
+        ? data.quantidade
+        : Number(data.quantidade) || 0,
+  };
+
+  return await ProdutosModel.criar(payload);
 };
 
 // Listar
