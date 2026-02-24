@@ -68,3 +68,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+input,
+select,
+textarea {
+  padding: 0.6em 0.9em;
+  min-height: 40px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background-color: #020617;
+  color: #e5e7eb;
+}

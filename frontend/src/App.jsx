@@ -20,13 +20,22 @@ function App() {
       >
         <Navbar />
 
-        <main style={{ flex: 1, padding: "30px" }}>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/ferramentas" element={<Ferramentas />} />
-            <Route path="/estoque" element={<Estoque />} />
-            <Route path="/relatorio" element={<Relatorio />} />
-          </Routes>
+        <main
+          style={{
+            flex: 1,
+            padding: "30px",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div style={{ width: "100%", maxWidth: "1100px" }}>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/ferramentas" element={<Ferramentas />} />
+              <Route path="/estoque" element={<Estoque />} />
+              <Route path="/relatorio" element={<Relatorio />} />
+            </Routes>
+          </div>
         </main>
       </div>
     </BrowserRouter>

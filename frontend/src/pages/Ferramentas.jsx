@@ -216,9 +216,9 @@ const styles = {
   card: {
     border: "1px solid #1f2937",
     borderRadius: 8,
-    padding: 16,
+    padding: 24,
     background: "#020617",
-    maxWidth: 800,
+    maxWidth: 960,
   },
   form: {
     display: "flex",
