@@ -24,7 +24,8 @@ function Movimentacoes() {
       <ul>
         {movimentacoes.map((mov) => (
           <li key={mov.id}>
-            {mov.tipo} - {mov.quantidade} - {mov.ferramenta_nome}
+            {mov.tipo} - {mov.quantidade} - {mov.ferramenta_nome}{" "}
+            {mov.responsavel && `- ${mov.responsavel}`}
           </li>
         ))}
       </ul>

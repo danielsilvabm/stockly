@@ -112,8 +112,8 @@ function Ferramentas() {
       <h2>Ferramentas</h2>
       <p>Cadastrar e gerenciar ferramentas do estoque.</p>
 
-      {erro && <p style={{ color: "red" }}>{erro}</p>}
-      {mensagem && <p style={{ color: "green" }}>{mensagem}</p>}
+      {erro && <p style={{ color: "#f97373" }}>{erro}</p>}
+      {mensagem && <p style={{ color: "#4ade80" }}>{mensagem}</p>}
 
       <div style={styles.card}>
         <h3 style={{ marginTop: 0 }}>Cadastrar ferramenta</h3>
@@ -200,7 +200,9 @@ function Ferramentas() {
                   <td style={styles.td}>{f.categoria || "-"}</td>
                   <td style={styles.td}>{f.quantidade}</td>
                   <td style={styles.td}>
-                    <button onClick={() => remover(f.id)}>Remover</button>
+                    <button onClick={() => remover(f.id)} style={styles.removeButton}>
+                      Remover
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -214,11 +216,12 @@ function Ferramentas() {
 
 const styles = {
   card: {
-    border: "1px solid #1f2937",
+    border: "1px solid #1b1b1b",
     borderRadius: 8,
     padding: 24,
-    background: "#020617",
+    background: "#1b1b1b",
     maxWidth: 960,
+    boxShadow: "0 18px 45px rgba(0, 0, 0, 0.55)",
   },
   form: {
     display: "flex",
@@ -235,26 +238,35 @@ const styles = {
     flexDirection: "column",
     gap: 6,
   },
-  label: { fontSize: 12, color: "#334155" },
+  label: { fontSize: 12, color: "#aaa" },
   table: {
     width: "100%",
     borderCollapse: "collapse",
-    backgroundColor: "#1e3a8a",
+    backgroundColor: "#2e2e2e",
     borderRadius: 8,
     overflow: "hidden",
   },
   th: {
     textAlign: "left",
-    borderBottom: "1px solid #1f2937",
-    backgroundColor: "#0f172a",
-    color: "#e5e7eb",
+    borderBottom: "1px solid #444",
+    backgroundColor: "#111010",
+    color: "#d4d4d4",
     padding: "8px",
   },
   td: {
-    borderBottom: "1px solid #1f2937",
-    color: "#e5e7eb",
+    borderBottom: "1px solid #444",
+    color: "#d4d4d4",
     padding: "8px",
   },
+  removeButton: {
+    backgroundColor: "#ef4444",
+    color: "#fee2e2",
+    border: "none",
+    padding: "5px 6px",
+    borderRadius: 4,
+    cursor: "pointer",
+    fontSize: "0.875rem",
+  }
 };
 
 export default Ferramentas;

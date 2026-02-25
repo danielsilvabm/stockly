@@ -4,6 +4,7 @@ function ProdutoForm({ ferramentas, onSubmit, loading }) {
   const [ferramentaId, setFerramentaId] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [tipo, setTipo] = useState("entrada");
+  const [responsavel, setResponsavel] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,12 +13,14 @@ function ProdutoForm({ ferramentas, onSubmit, loading }) {
       ferramenta_id: Number(ferramentaId),
       quantidade: Number(quantidade),
       tipo,
+      responsavel,
     };
 
     onSubmit(dados);
 
     setQuantidade("");
     setTipo("entrada");
+    setResponsavel("");
   };
 
   const semFerramentas = !ferramentas || ferramentas.length === 0;
@@ -51,6 +54,14 @@ function ProdutoForm({ ferramentas, onSubmit, loading }) {
             value={quantidade}
             min="1"
             onChange={(e) => setQuantidade(e.target.value)}
+            required
+          />
+
+          <input
+            type="text"
+            placeholder="Responsável"
+            value={responsavel}
+            onChange={(e) => setResponsavel(e.target.value)}
             required
           />
 

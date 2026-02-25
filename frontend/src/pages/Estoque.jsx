@@ -63,7 +63,7 @@ function Estoque() {
 const styles = {
   th: {
     textAlign: "left",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #ccc",
     padding: "8px",
   },
   td: {

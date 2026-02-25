@@ -50,6 +50,7 @@ function Relatorio() {
               <th style={styles.th}>Ferramenta</th>
               <th style={styles.th}>Tipo</th>
               <th style={styles.th}>Quantidade</th>
+              <th style={styles.th}>Responsável</th>
             </tr>
           </thead>
           <tbody>
@@ -59,6 +60,7 @@ function Relatorio() {
                 <td style={styles.td}>{mov.ferramenta_nome}</td>
                 <td style={styles.td}>{mov.tipo}</td>
                 <td style={styles.td}>{mov.quantidade}</td>
+                <td style={styles.td}>{mov.responsavel || "-"}</td>
               </tr>
             ))}
           </tbody>
@@ -71,7 +73,7 @@ function Relatorio() {
 const styles = {
   th: {
     textAlign: "left",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #ccc",
     padding: "8px",
   },
   td: {
