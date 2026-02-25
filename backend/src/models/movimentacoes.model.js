@@ -19,10 +19,16 @@ async function atualizarQuantidade(ferramenta_id, novaQuantidade, connection) {
 }
 
 // Inserir movimentação
-async function inserirMovimentacao(ferramenta_id, tipo, quantidade, connection) {
+async function inserirMovimentacao(
+  ferramenta_id,
+  tipo,
+  quantidade,
+  responsavel,
+  connection
+) {
   await connection.query(
-    'INSERT INTO movimentacoes (ferramenta_id, tipo, quantidade, data) VALUES (?, ?, ?, NOW())',
-    [ferramenta_id, tipo, quantidade]
+    'INSERT INTO movimentacoes (ferramenta_id, tipo, quantidade, responsavel, data) VALUES (?, ?, ?, ?, NOW())',
+    [ferramenta_id, tipo, quantidade, responsavel]
   );
 }
 
@@ -33,6 +39,7 @@ async function listarMovimentacoes() {
       m.id,
       m.tipo,
       m.quantidade,
+      m.responsavel,
       m.data,
       f.nome AS ferramenta_nome
     FROM movimentacoes m

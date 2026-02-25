@@ -4,10 +4,10 @@ const movimentacoesModel = require('../models/movimentacoes.model');
 /**
  * Criar movimentação (entrada ou saída)
  */
-async function criarMovimentacao({ ferramenta_id, tipo, quantidade }) {
+async function criarMovimentacao({ ferramenta_id, tipo, quantidade, responsavel }) {
 
   //  Validações básicas
-  if (!ferramenta_id || !tipo || !quantidade) {
+  if (!ferramenta_id || !tipo || !quantidade || !responsavel) {
     throw new Error('Dados incompletos');
   }
 
@@ -60,6 +60,7 @@ async function criarMovimentacao({ ferramenta_id, tipo, quantidade }) {
       ferramenta_id,
       tipo,
       quantidade,
+      responsavel,
       connection
     );
 
@@ -78,25 +79,7 @@ async function criarMovimentacao({ ferramenta_id, tipo, quantidade }) {
   }
 }
 
-/**
- * Listar movimentações
- */
-async function listarMovimentacoes() {
-  const [rows] = await db.query(`
-    SELECT 
-      m.id,
-      m.tipo,
-      m.quantidade,
-      m.data,
-      f.nome AS ferramenta_nome
-    FROM movimentacoes m
-    JOIN ferramentas f ON m.ferramenta_id = f.id
-    ORDER BY m.data DESC
-  `);
-
-  return rows;
-}
-
 module.exports = {
-  listarMovimentacoes,
+  criarMovimentacao,
+  listarMovimentacoes: movimentacoesModel.listarMovimentacoes,
 };

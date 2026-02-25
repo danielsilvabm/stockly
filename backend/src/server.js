@@ -3,9 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
-
 const produtosRoutes = require('./routes/produtos.routes');
 const movimentacoesRoutes = require('./routes/movimentacoes.routes');
+const authRoutes = require('./routes/auth.routes');
 const errorMiddleware = require('./middlewares/error.middleware');
 
 const app = express();
@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/ferramentas', produtosRoutes);
 app.use('/movimentacoes', movimentacoesRoutes);
+app.use('/auth', authRoutes);
 
 //  SEMPRE por último
 app.use(errorMiddleware);
